@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zava-insurance.com/sitemap-index.xml

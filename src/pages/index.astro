@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="hero hero--home">
+    <div class="hero__bg-pattern"></div>
+    <div class="hero__bg-pattern hero__bg-pattern--2"></div>
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <span class="hero__badge">★ A+ Rated by AM Best · Trusted Since 1987</span>
+          <h1>Protection You Can Trust, Service You Deserve</h1>
+          <p>For nearly four decades, Zava Insurance has been safeguarding families, businesses, and communities with comprehensive coverage and personalized service.</p>
+          <div class="hero__actions">
+            <a href="/contact" class="btn btn--gold btn--lg">Get a Free Quote →</a>
+            <a href="/services" class="btn btn--outline-white btn--lg">Explore Services</a>
+          </div>
+          <div class="hero__trust">
+            <div class="hero__trust-item">
+              <span class="hero__trust-number">250K+</span>
+              <span class="hero__trust-label">Policyholders</span>
+            </div>
+            <div class="hero__trust-divider"></div>
+            <div class="hero__trust-item">
+              <span class="hero__trust-number">98%</span>
+              <span class="hero__trust-label">Satisfaction</span>
+            </div>
+            <div class="hero__trust-divider"></div>
+            <div class="hero__trust-item">
+              <span class="hero__trust-number">24/7</span>
+              <span class="hero__trust-label">Claims Support</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&h=500&fit=crop" alt="Zava Insurance agent helping a family with their insurance needs" loading="eager" />
+          <div class="hero__image-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stat">
+        <span class="stat__number">37+</span>
+        <span class="stat__label">Years of Service</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">250K+</span>
+        <span class="stat__label">Policies Issued</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">98%</span>
+        <span class="stat__label">Claim Satisfaction</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">12</span>
+        <span class="stat__label">Branch Locations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Insurance Solutions for Every Need</h2>
+        <p>From personal coverage to complex business policies, we offer a full suite of insurance products designed to protect what matters most.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="icon-card">
+          <span class="icon-card__icon">🚗</span>
+          <h3>Auto Insurance</h3>
+          <p>Comprehensive coverage for your vehicles with flexible deductibles, roadside assistance, and competitive rates that fit your budget.</p>
+          <a href="/services#auto" class="btn btn--primary" style="margin-top: 1rem;">Learn More</a>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">🏠</span>
+          <h3>Home Insurance</h3>
+          <p>Protect your most valuable asset with customizable policies covering everything from structural damage to personal belongings.</p>
+          <a href="/services#home" class="btn btn--primary" style="margin-top: 1rem;">Learn More</a>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">❤️</span>
+          <h3>Life Insurance</h3>
+          <p>Give your loved ones the financial security they deserve with term and whole life options tailored to your family's needs.</p>
+          <a href="/services#life" class="btn btn--primary" style="margin-top: 1rem;">Learn More</a>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">🏢</span>
+          <h3>Business Insurance</h3>
+          <p>Comprehensive commercial coverage including liability, property, workers' comp, and industry-specific solutions.</p>
+          <a href="/services#business" class="btn btn--primary" style="margin-top: 1rem;">Learn More</a>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">🏥</span>
+          <h3>Health Insurance</h3>
+          <p>Individual and group health plans with extensive provider networks, prescription coverage, and wellness programs.</p>
+          <a href="/services#health" class="btn btn--primary" style="margin-top: 1rem;">Learn More</a>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">☂️</span>
+          <h3>Umbrella Insurance</h3>
+          <p>Extra liability protection that goes beyond standard policies, giving you peace of mind for life's unexpected moments.</p>
+          <a href="/services#umbrella" class="btn btn--primary" style="margin-top: 1rem;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Zava -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="two-col">
+        <div>
+          <h2>Why Families & Businesses Choose Zava</h2>
+          <p>Since 1987, we've built our reputation on a simple promise: treat every policyholder like a neighbor. Our dedicated team of licensed professionals works alongside you to find the right coverage at the right price.</p>
+          <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
+            <li style="padding: 0.5rem 0; color: var(--color-gray-600);">✅ Personalized coverage plans — no cookie-cutter policies</li>
+            <li style="padding: 0.5rem 0; color: var(--color-gray-600);">✅ Local agents who know your community</li>
+            <li style="padding: 0.5rem 0; color: var(--color-gray-600);">✅ 24/7 claims support with dedicated adjusters</li>
+            <li style="padding: 0.5rem 0; color: var(--color-gray-600);">✅ Multi-policy discounts up to 25%</li>
+            <li style="padding: 0.5rem 0; color: var(--color-gray-600);">✅ A+ rated by AM Best for financial strength</li>
+          </ul>
+          <a href="/about" class="btn btn--primary">Learn About Our Story</a>
+        </div>
+        <div class="two-col__image">
+          <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&h=400&fit=crop" alt="Zava Insurance agent meeting with a family" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Real stories from real people we've had the privilege to protect.</p>
+      </div>
+      <div class="grid grid--3">
+        <div class="testimonial">
+          <p class="testimonial__text">"When a tree fell on our house during the storm, Zava had an adjuster at our door the next morning. They handled everything while we focused on our family."</p>
+          <p class="testimonial__author">Sarah & Michael Torres</p>
+          <p class="testimonial__role">Homeowners, Hartford CT</p>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__text">"We've insured our fleet of 40 vehicles with Zava for over a decade. Their business team understands our industry and consistently saves us money."</p>
+          <p class="testimonial__author">James Richardson</p>
+          <p class="testimonial__role">CEO, Richardson Logistics</p>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__text">"Switching to Zava was the best decision. They bundled our auto and home policies and saved us $1,200 a year. Plus, the service is incredible."</p>
+          <p class="testimonial__author">Elena Vasquez</p>
+          <p class="testimonial__role">Policyholder since 2018</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="two-col">
+        <div class="two-col__image">
+          <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop" alt="Zava Insurance community volunteer event" loading="lazy" />
+        </div>
+        <div>
+          <h2>Invested in Our Communities</h2>
+          <p>Insurance is about more than policies — it's about people. Every year, Zava Insurance invests over $2 million in local community programs, disaster relief efforts, and educational scholarships.</p>
+          <p>Our employees volunteer over 15,000 hours annually through the <strong style="color: var(--color-teal-light);">Zava Cares</strong> program, partnering with local nonprofits to build stronger communities.</p>
+          <a href="/about#community" class="btn btn--gold" style="margin-top: 1rem;">Our Community Impact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Protect What Matters Most?</h2>
+      <p>Get a personalized quote in minutes. Our licensed agents are standing by to help you find the perfect coverage.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/contact" class="btn btn--gold btn--lg">Get Your Free Quote</a>
+        <a href="tel:+18005559282" class="btn btn--outline-white btn--lg">📞 1-800-555-ZAVA</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

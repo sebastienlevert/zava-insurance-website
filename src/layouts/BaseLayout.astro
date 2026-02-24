@@ -1,0 +1,177 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: string;
+}
+
+import '../styles/global.css';
+
+const {
+  title,
+  description = 'Zava Insurance — Trusted protection for families, businesses, and communities since 1987. Auto, home, life, business, and health insurance.',
+  image = '/images/og-default.jpg',
+  canonicalURL = Astro.url.href,
+  type = 'website',
+} = Astro.props;
+
+const siteTitle = title === 'Home' ? 'Zava Insurance — Protection You Can Trust' : `${title} | Zava Insurance`;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Primary Meta Tags -->
+  <title>{siteTitle}</title>
+  <meta name="title" content={siteTitle} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site)} />
+  <meta property="og:site_name" content="Zava Insurance" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={siteTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+
+  <!-- Styles are imported in frontmatter -->
+
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "InsuranceAgency",
+    "name": "Zava Insurance",
+    "url": "https://zava-insurance.com",
+    "logo": "https://zava-insurance.com/images/zava-icon.png",
+    "description": description,
+    "foundingDate": "1987",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "200 Commerce Boulevard, Suite 500",
+      "addressLocality": "Hartford",
+      "addressRegion": "CT",
+      "postalCode": "06103",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-555-ZAVA",
+      "contactType": "customer service"
+    }
+  })} />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo" aria-label="Zava Insurance Home">
+        <img class="logo__icon logo__icon--dark" src="/images/zava-icon.png" alt="" />
+        Zava<span>Insurance</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/products">Products</a></li>
+          <li><a href="/branches">Branches</a></li>
+          <li><a href="/life-at-zava">Life at Zava</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li class="nav-cta"><a href="/contact" class="btn btn--primary">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="/" class="logo" aria-label="Zava Insurance Home">
+            <img class="logo__icon" src="/images/zava-icon.png" alt="" />
+            Zava<span>Insurance</span>
+          </a>
+          <p>Protecting families, businesses, and communities since 1987. Your trusted partner for comprehensive insurance solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/about#mission">Our Mission</a></li>
+            <li><a href="/about#community">Community</a></li>
+            <li><a href="/life-at-zava">Life at Zava</a></li>
+            <li><a href="/careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Insurance</h4>
+          <ul>
+            <li><a href="/services">All Services</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/products#auto">Auto Insurance</a></li>
+            <li><a href="/products#home">Home Insurance</a></li>
+            <li><a href="/products#life">Life Insurance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/branches">Find a Branch</a></li>
+            <li><a href="tel:+18005559282">1-800-555-ZAVA</a></li>
+            <li><a href="mailto:support@zava-insurance.com">Email Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Zava Insurance. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.textContent = isOpen ? '✕' : '☰';
+      });
+    }
+  </script>
+</body>
+</html>

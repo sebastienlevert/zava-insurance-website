@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const products = [
+  {
+    id: 'auto',
+    name: 'Zava AutoShield',
+    icon: '🚗',
+    tagline: 'Complete vehicle protection with smart savings',
+    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&h=300&fit=crop',
+    features: ['Accident forgiveness', 'Vanishing deductible', 'Safe driver rewards up to 30%', 'Gap coverage included', 'Roadside assistance 24/7', 'OEM parts guarantee'],
+    startingAt: '$45/mo',
+  },
+  {
+    id: 'home',
+    name: 'Zava HomeGuard',
+    icon: '🏠',
+    tagline: 'Your home, fully protected — inside and out',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&h=300&fit=crop',
+    features: ['Replacement cost coverage', 'Extended dwelling protection', 'Water backup coverage', 'Identity theft protection', 'Smart home device discount', 'Guaranteed rebuild'],
+    startingAt: '$65/mo',
+  },
+  {
+    id: 'life',
+    name: 'Zava LifeSecure',
+    icon: '❤️',
+    tagline: 'Financial security for the people you love',
+    image: 'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=500&h=300&fit=crop',
+    features: ['No medical exam options', 'Term lengths: 10, 20, 30 years', 'Living benefits rider', 'Child protection rider', 'Accelerated death benefit', 'Premium waiver on disability'],
+    startingAt: '$15/mo',
+  },
+  {
+    id: 'business',
+    name: 'Zava BusinessPro',
+    icon: '🏢',
+    tagline: 'Tailored commercial coverage for every industry',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop',
+    features: ['Business Owner\'s Policy (BOP)', 'Cyber liability protection', 'Equipment breakdown coverage', 'Employee practices liability', 'Commercial flood insurance', 'Business income coverage'],
+    startingAt: '$99/mo',
+  },
+  {
+    id: 'health',
+    name: 'Zava HealthPlus',
+    icon: '🏥',
+    tagline: 'Comprehensive health coverage with nationwide access',
+    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=500&h=300&fit=crop',
+    features: ['500,000+ provider network', 'Telehealth included', '$0 preventive care', 'Prescription drug coverage', 'Mental health services', 'Wellness rewards program'],
+    startingAt: '$199/mo',
+  },
+  {
+    id: 'umbrella',
+    name: 'Zava UltraShield',
+    icon: '☂️',
+    tagline: 'Extra protection for life\'s biggest what-ifs',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&h=300&fit=crop',
+    features: ['$1M-$5M coverage options', 'Worldwide protection', 'Legal defense coverage', 'Covers all underlying policies', 'No additional deductible', 'Affordable annual premiums'],
+    startingAt: '$13/mo',
+  },
+];
+---
+<BaseLayout title="Products" description="Explore Zava Insurance's product lineup — AutoShield, HomeGuard, LifeSecure, BusinessPro, HealthPlus, and UltraShield.">
+  <!-- Hero -->
+  <section class="hero hero--page">
+    <div class="container">
+      <h1>Our Products</h1>
+      <p>Purpose-built insurance products designed to deliver maximum protection with real value. Find the right fit for your life.</p>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  {products.map((product, i) => (
+    <section class={`section ${i % 2 === 1 ? 'section--gray' : ''}`} id={product.id}>
+      <div class="container">
+        <div class="two-col">
+          {i % 2 === 0 ? (
+            <>
+              <div>
+                <h2>{product.icon} {product.name}</h2>
+                <p style="font-size: 1.125rem; color: var(--color-teal); font-weight: 600; margin-bottom: 1rem;">{product.tagline}</p>
+                <h4>Key Features</h4>
+                <ul style="color: var(--color-gray-600); padding-left: 1.25rem; margin-bottom: 1.5rem;">
+                  {product.features.map(f => <li style="margin-bottom: 0.5rem;">{f}</li>)}
+                </ul>
+                <p style="font-size: 1.125rem;"><strong>Starting at:</strong> <span style="color: var(--color-teal); font-weight: 700; font-size: 1.5rem;">{product.startingAt}</span></p>
+                <a href="/contact" class="btn btn--primary" style="margin-top: 1rem;">Get a Quote</a>
+              </div>
+              <div class="two-col__image">
+                <img src={product.image} alt={product.name} loading="lazy" />
+              </div>
+            </>
+          ) : (
+            <>
+              <div class="two-col__image">
+                <img src={product.image} alt={product.name} loading="lazy" />
+              </div>
+              <div>
+                <h2>{product.icon} {product.name}</h2>
+                <p style="font-size: 1.125rem; color: var(--color-teal); font-weight: 600; margin-bottom: 1rem;">{product.tagline}</p>
+                <h4>Key Features</h4>
+                <ul style="color: var(--color-gray-600); padding-left: 1.25rem; margin-bottom: 1.5rem;">
+                  {product.features.map(f => <li style="margin-bottom: 0.5rem;">{f}</li>)}
+                </ul>
+                <p style="font-size: 1.125rem;"><strong>Starting at:</strong> <span style="color: var(--color-teal); font-weight: 700; font-size: 1.5rem;">{product.startingAt}</span></p>
+                <a href="/contact" class="btn btn--primary" style="margin-top: 1rem;">Get a Quote</a>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Comparison -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Zava Products?</h2>
+        <p>Every product comes with the Zava Advantage — our commitment to going above and beyond.</p>
+      </div>
+      <div class="grid grid--4">
+        <div class="icon-card">
+          <span class="icon-card__icon">⚡</span>
+          <h3>Fast Claims</h3>
+          <p>Average claim resolution in under 48 hours with our streamlined digital process.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">🎯</span>
+          <h3>Custom Fit</h3>
+          <p>Every policy is tailored to your unique situation — no one-size-fits-all plans here.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">💰</span>
+          <h3>Bundle Savings</h3>
+          <p>Combine multiple products and save up to 25% on your total premiums.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">🌟</span>
+          <h3>Loyalty Rewards</h3>
+          <p>Long-term clients enjoy rate locks, deductible reductions, and exclusive perks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Let Us Build Your Perfect Coverage Bundle</h2>
+      <p>Our agents specialize in combining products for maximum protection and savings. Get a free consultation today.</p>
+      <a href="/contact" class="btn btn--gold btn--lg">Schedule a Free Consultation</a>
+    </div>
+  </section>
+</BaseLayout>

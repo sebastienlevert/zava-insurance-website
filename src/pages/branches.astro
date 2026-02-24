@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const branches = [
+  {
+    name: 'Hartford — Headquarters',
+    address: '200 Commerce Boulevard, Suite 500, Hartford, CT 06103',
+    phone: '(860) 555-0100',
+    hours: 'Mon–Fri 8:00 AM – 6:00 PM, Sat 9:00 AM – 1:00 PM',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&h=300&fit=crop',
+    specialties: ['Corporate Headquarters', 'All Insurance Lines', 'Claims Center'],
+  },
+  {
+    name: 'Boston',
+    address: '75 Federal Street, 12th Floor, Boston, MA 02110',
+    phone: '(617) 555-0200',
+    hours: 'Mon–Fri 8:30 AM – 5:30 PM',
+    image: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=500&h=300&fit=crop',
+    specialties: ['Business Insurance', 'Health Plans', 'Marine Coverage'],
+  },
+  {
+    name: 'New York City',
+    address: '350 Fifth Avenue, Suite 3200, New York, NY 10118',
+    phone: '(212) 555-0300',
+    hours: 'Mon–Fri 8:00 AM – 7:00 PM, Sat 10:00 AM – 2:00 PM',
+    image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=500&h=300&fit=crop',
+    specialties: ['Commercial Insurance', 'High-Value Home', 'Professional Liability'],
+  },
+  {
+    name: 'Philadelphia',
+    address: '1500 Market Street, Suite 800, Philadelphia, PA 19102',
+    phone: '(215) 555-0400',
+    hours: 'Mon–Fri 8:30 AM – 5:30 PM',
+    image: 'https://images.unsplash.com/photo-1569761316261-9a8696fa2ca3?w=500&h=300&fit=crop',
+    specialties: ['Auto Insurance', 'Home Insurance', 'Life Insurance'],
+  },
+  {
+    name: 'Washington, D.C.',
+    address: '1000 Connecticut Avenue NW, Suite 400, Washington, DC 20036',
+    phone: '(202) 555-0500',
+    hours: 'Mon–Fri 9:00 AM – 5:30 PM',
+    image: 'https://images.unsplash.com/photo-1617581629397-a72507c3de9e?w=500&h=300&fit=crop',
+    specialties: ['Government Contractor Insurance', 'Professional Liability', 'Group Health'],
+  },
+  {
+    name: 'Baltimore',
+    address: '100 East Pratt Street, Suite 1600, Baltimore, MD 21202',
+    phone: '(410) 555-0600',
+    hours: 'Mon–Fri 8:30 AM – 5:00 PM',
+    image: 'https://images.unsplash.com/photo-1575517111478-7f6afd0973db?w=500&h=300&fit=crop',
+    specialties: ['Auto Insurance', 'Home Insurance', 'Small Business'],
+  },
+  {
+    name: 'Providence',
+    address: '1 Financial Plaza, Suite 300, Providence, RI 02903',
+    phone: '(401) 555-0700',
+    hours: 'Mon–Fri 8:30 AM – 5:00 PM',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=500&h=300&fit=crop',
+    specialties: ['Marine Insurance', 'Home Insurance', 'Life Insurance'],
+  },
+  {
+    name: 'Stamford',
+    address: '300 Atlantic Street, Suite 500, Stamford, CT 06901',
+    phone: '(203) 555-0800',
+    hours: 'Mon–Fri 8:00 AM – 6:00 PM',
+    image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=500&h=300&fit=crop',
+    specialties: ['High-Net-Worth Insurance', 'Business Insurance', 'Umbrella Coverage'],
+  },
+  {
+    name: 'Newark',
+    address: '1 Gateway Center, Suite 700, Newark, NJ 07102',
+    phone: '(973) 555-0900',
+    hours: 'Mon–Fri 8:30 AM – 5:30 PM',
+    image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=500&h=300&fit=crop',
+    specialties: ['Commercial Insurance', 'Workers Comp', 'Auto Fleet'],
+  },
+  {
+    name: 'Portland, ME',
+    address: '100 Middle Street, Suite 200, Portland, ME 04101',
+    phone: '(207) 555-1000',
+    hours: 'Mon–Fri 8:30 AM – 5:00 PM',
+    image: 'https://images.unsplash.com/photo-1508693926297-1d61ee3df82a?w=500&h=300&fit=crop',
+    specialties: ['Home Insurance', 'Boat & Marine', 'Life Insurance'],
+  },
+  {
+    name: 'Albany',
+    address: '80 State Street, Suite 600, Albany, NY 12207',
+    phone: '(518) 555-1100',
+    hours: 'Mon–Fri 8:30 AM – 5:00 PM',
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&h=300&fit=crop',
+    specialties: ['Farm & Ranch', 'Home Insurance', 'Auto Insurance'],
+  },
+  {
+    name: 'Richmond',
+    address: '1001 East Broad Street, Suite 300, Richmond, VA 23219',
+    phone: '(804) 555-1200',
+    hours: 'Mon–Fri 8:30 AM – 5:30 PM',
+    image: 'https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?w=500&h=300&fit=crop',
+    specialties: ['Auto Insurance', 'Business Insurance', 'Health Plans'],
+  },
+];
+---
+<BaseLayout title="Branch Locations" description="Find a Zava Insurance branch near you. 12 locations across the Northeast serving you with personalized, local insurance expertise.">
+  <!-- Hero -->
+  <section class="hero hero--page">
+    <div class="container">
+      <h1>Our Branch Locations</h1>
+      <p>With 12 offices across the Northeast, there's always a Zava team ready to help you in person. Find your nearest branch below.</p>
+    </div>
+  </section>
+
+  <!-- Branches Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        {branches.map((branch) => (
+          <div class="branch-card">
+            <img class="branch-card__image" src={branch.image} alt={`Zava Insurance ${branch.name} branch`} loading="lazy" />
+            <div class="branch-card__body">
+              <h3>{branch.name}</h3>
+              <div class="branch-card__detail">
+                <span>📍</span>
+                <span>{branch.address}</span>
+              </div>
+              <div class="branch-card__detail">
+                <span>📞</span>
+                <span><a href={`tel:${branch.phone.replace(/[^+\d]/g, '')}`}>{branch.phone}</a></span>
+              </div>
+              <div class="branch-card__detail">
+                <span>🕐</span>
+                <span>{branch.hours}</span>
+              </div>
+              <div class="job-card__tags" style="margin-top: 0.75rem;">
+                {branch.specialties.map(s => <span class="tag tag--teal">{s}</span>)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Can't Visit a Branch?</h2>
+      <p>No problem! Our licensed agents are available by phone, email, and video chat to help you from anywhere.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/contact" class="btn btn--gold btn--lg">Contact Us Online</a>
+        <a href="tel:+18005559282" class="btn btn--outline-white btn--lg">📞 1-800-555-ZAVA</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

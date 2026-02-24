@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { jobs } from '../../data/jobs';
+
+export const getStaticPaths = () => {
+  return Object.keys(jobs).map(slug => ({ params: { slug } }));
+};
+
+const { slug } = Astro.params;
+const job = jobs[slug as string];
+if (!job) return Astro.redirect('/careers');
+---
+<BaseLayout title={job.title} description={`${job.title} at Zava Insurance — ${job.department}, ${job.location}. ${job.description.substring(0, 120)}...`}>
+  <!-- Breadcrumbs -->
+  <section class="hero hero--page" style="padding: 2rem 0;">
+    <div class="container">
+      <nav class="breadcrumbs" style="color: var(--color-gray-300);">
+        <a href="/" style="color: var(--color-gray-300);">Home</a>
+        <span>›</span>
+        <a href="/careers" style="color: var(--color-gray-300);">Careers</a>
+        <span>›</span>
+        <span style="color: var(--color-white);">{job.title}</span>
+      </nav>
+      <h1 style="margin-top: 0.75rem;">{job.title}</h1>
+      <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.75rem; color: var(--color-gray-300); font-size: 1rem;">
+        <span>🏢 {job.department}</span>
+        <span>📍 {job.location}</span>
+        <span>⏰ {job.type}</span>
+        <span>🏡 {job.remote}</span>
+        <span>💰 {job.salary}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      <div class="prose">
+        <h2>About This Role</h2>
+        <p>{job.description}</p>
+
+        <h2>What You'll Do</h2>
+        <ul>
+          {job.responsibilities.map(r => <li>{r}</li>)}
+        </ul>
+
+        <h2>What We're Looking For</h2>
+        <ul>
+          {job.qualifications.map(q => <li>{q}</li>)}
+        </ul>
+
+        {job.niceToHave.length > 0 && (
+          <>
+            <h2>Nice to Have</h2>
+            <ul>
+              {job.niceToHave.map(n => <li>{n}</li>)}
+            </ul>
+          </>
+        )}
+
+        <h2>What We Offer</h2>
+        <ul>
+          {job.benefits.map(b => <li>{b}</li>)}
+        </ul>
+      </div>
+
+      <div style="margin-top: 3rem; text-align: center;">
+        <a href="mailto:careers@zava-insurance.com" class="btn btn--primary btn--lg">Apply for This Position</a>
+        <p style="margin-top: 1rem; font-size: 0.95rem;">Or send your resume to <a href="mailto:careers@zava-insurance.com">careers@zava-insurance.com</a> with the job title in the subject line.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Jobs CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Explore More Opportunities</h2>
+      <p>This isn't the right fit? We have many more openings across the company.</p>
+      <a href="/careers" class="btn btn--gold btn--lg">View All Open Positions</a>
+    </div>
+  </section>
+</BaseLayout>

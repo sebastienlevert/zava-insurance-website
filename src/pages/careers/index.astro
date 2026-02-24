@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const jobs = [
+  {
+    title: 'Senior Claims Adjuster',
+    department: 'Claims',
+    location: 'Hartford, CT',
+    type: 'Full-Time',
+    remote: 'Hybrid',
+    slug: 'senior-claims-adjuster',
+    description: 'Lead complex claims investigations and mentor junior adjusters while ensuring fast, fair claim resolutions for our policyholders.',
+    tags: ['Claims', 'Leadership', 'Insurance'],
+  },
+  {
+    title: 'Full Stack Software Engineer',
+    department: 'Technology',
+    location: 'Hartford, CT / Remote',
+    type: 'Full-Time',
+    remote: 'Remote Eligible',
+    slug: 'full-stack-software-engineer',
+    description: 'Build and maintain our digital insurance platform using React, Node.js, and cloud-native technologies. Ship features that directly impact clients.',
+    tags: ['Engineering', 'React', 'Node.js'],
+  },
+  {
+    title: 'Insurance Agent — Personal Lines',
+    department: 'Sales',
+    location: 'Boston, MA',
+    type: 'Full-Time',
+    remote: 'On-Site',
+    slug: 'insurance-agent-personal-lines',
+    description: 'Help individuals and families find the right auto, home, and life coverage. Build lasting client relationships in the Boston market.',
+    tags: ['Sales', 'Customer Service', 'Licensing Required'],
+  },
+  {
+    title: 'Underwriting Analyst',
+    department: 'Underwriting',
+    location: 'New York, NY',
+    type: 'Full-Time',
+    remote: 'Hybrid',
+    slug: 'underwriting-analyst',
+    description: 'Evaluate insurance applications, assess risk, and determine policy terms for commercial and personal lines using data-driven analysis.',
+    tags: ['Underwriting', 'Analytics', 'Risk Assessment'],
+  },
+  {
+    title: 'Marketing Manager — Digital',
+    department: 'Marketing',
+    location: 'Hartford, CT',
+    type: 'Full-Time',
+    remote: 'Hybrid',
+    slug: 'marketing-manager-digital',
+    description: 'Lead our digital marketing strategy across paid, organic, email, and social channels. Drive brand awareness and lead generation.',
+    tags: ['Marketing', 'Digital', 'Strategy'],
+  },
+  {
+    title: 'Customer Experience Specialist',
+    department: 'Client Services',
+    location: 'Philadelphia, PA',
+    type: 'Full-Time',
+    remote: 'Hybrid',
+    slug: 'customer-experience-specialist',
+    description: 'Be the voice of Zava — handle client inquiries, policy changes, and billing questions with empathy and efficiency.',
+    tags: ['Customer Service', 'Communication', 'Insurance'],
+  },
+  {
+    title: 'Data Scientist — Risk Modeling',
+    department: 'Technology',
+    location: 'Hartford, CT / Remote',
+    type: 'Full-Time',
+    remote: 'Remote Eligible',
+    slug: 'data-scientist-risk-modeling',
+    description: 'Build predictive models for risk assessment, pricing optimization, and fraud detection using machine learning and actuarial data.',
+    tags: ['Data Science', 'ML', 'Python'],
+  },
+  {
+    title: 'Commercial Insurance Producer',
+    department: 'Sales',
+    location: 'Washington, DC',
+    type: 'Full-Time',
+    remote: 'On-Site',
+    slug: 'commercial-insurance-producer',
+    description: 'Develop new business relationships and sell commercial insurance solutions to mid-market and enterprise clients in the DC metro area.',
+    tags: ['Sales', 'B2B', 'Commercial Lines'],
+  },
+  {
+    title: 'HR Business Partner',
+    department: 'People & Culture',
+    location: 'Hartford, CT',
+    type: 'Full-Time',
+    remote: 'Hybrid',
+    slug: 'hr-business-partner',
+    description: 'Partner with business leaders to drive talent strategy, employee engagement, and organizational development across Zava.',
+    tags: ['HR', 'Talent', 'Culture'],
+  },
+  {
+    title: 'Actuarial Analyst (Entry Level)',
+    department: 'Actuarial',
+    location: 'Hartford, CT',
+    type: 'Full-Time',
+    remote: 'Hybrid',
+    slug: 'actuarial-analyst-entry',
+    description: 'Support pricing and reserving analyses for personal and commercial lines. Great opportunity for candidates pursuing actuarial exams — exam support provided.',
+    tags: ['Actuarial', 'Entry Level', 'Exam Support'],
+  },
+  {
+    title: 'UX Designer',
+    department: 'Technology',
+    location: 'Remote',
+    type: 'Full-Time',
+    remote: 'Fully Remote',
+    slug: 'ux-designer',
+    description: 'Design intuitive, accessible digital experiences for our client portal and agent tools. Work closely with engineering and product teams.',
+    tags: ['Design', 'UX', 'Figma'],
+  },
+  {
+    title: 'Summer Internship Program',
+    department: 'Various',
+    location: 'Hartford, CT',
+    type: 'Internship',
+    remote: 'On-Site',
+    slug: 'summer-internship',
+    description: '10-week paid internship across Claims, Underwriting, Technology, Marketing, and Finance. Mentorship, projects, and social events included.',
+    tags: ['Internship', 'Students', 'Paid'],
+  },
+];
+
+const departments = [...new Set(jobs.map(j => j.department))];
+---
+<BaseLayout title="Careers" description="Join Zava Insurance — explore open positions in claims, technology, sales, underwriting, marketing, and more. Build a meaningful career with us.">
+  <!-- Hero -->
+  <section class="hero hero--page">
+    <div class="container">
+      <h1>Join Our Team</h1>
+      <p>Build a career that matters. Explore open positions at Zava Insurance and find your place on a team that values integrity, growth, and community.</p>
+    </div>
+  </section>
+
+  <!-- Why Join -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="grid grid--4">
+        <div class="icon-card">
+          <span class="icon-card__icon">🏆</span>
+          <h3>Award-Winning Culture</h3>
+          <p>Named "Best Place to Work" in insurance for 5 consecutive years.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">📈</span>
+          <h3>Career Growth</h3>
+          <p>68% of leadership roles filled through internal promotions.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">🌍</span>
+          <h3>Real Impact</h3>
+          <p>Help protect 250,000+ policyholders and their families.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">💚</span>
+          <h3>Great Benefits</h3>
+          <p>Comprehensive package including 100% health coverage and 25 days PTO.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Job Listings -->
+  <section class="section" id="openings">
+    <div class="container">
+      <div class="section-header">
+        <h2>Open Positions</h2>
+        <p>We have {jobs.length} open roles across {departments.length} departments. Find one that's right for you.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        {jobs.map((job) => (
+          <div class="job-card">
+            <h3><a href={`/careers/${job.slug}`}>{job.title}</a></h3>
+            <div class="job-card__meta">
+              <span>🏢 {job.department}</span>
+              <span>📍 {job.location}</span>
+              <span>⏰ {job.type}</span>
+              <span>🏡 {job.remote}</span>
+            </div>
+            <p>{job.description}</p>
+            <div class="job-card__tags">
+              {job.tags.map(tag => <span class="tag tag--teal">{tag}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Process -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Hiring Process</h2>
+        <p>Transparent, respectful, and efficient — here's what to expect when you apply.</p>
+      </div>
+      <div class="grid grid--4">
+        <div class="icon-card">
+          <span class="icon-card__icon">1️⃣</span>
+          <h3>Apply Online</h3>
+          <p>Submit your application and resume through our careers page. We review every application.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">2️⃣</span>
+          <h3>Phone Screen</h3>
+          <p>A 30-minute call with our recruiting team to discuss your background and interests.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">3️⃣</span>
+          <h3>Team Interviews</h3>
+          <p>Meet the team through 2-3 interviews (virtual or in-person) focused on skills and culture fit.</p>
+        </div>
+        <div class="icon-card">
+          <span class="icon-card__icon">4️⃣</span>
+          <h3>Offer & Onboarding</h3>
+          <p>Receive your offer within a week of final interviews. Our 90-day onboarding sets you up for success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Don't See the Right Role?</h2>
+      <p>We're always looking for great people. Send us your resume and we'll keep you in mind for future openings.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:careers@zava-insurance.com" class="btn btn--gold btn--lg">Send Your Resume</a>
+        <a href="/life-at-zava" class="btn btn--outline-white btn--lg">Life at Zava</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact Us" description="Get in touch with Zava Insurance. Request a free quote, file a claim, or ask a question — we're here to help.">
+  <!-- Hero -->
+  <section class="hero hero--page">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Have a question, need a quote, or want to file a claim? We're here for you. Reach out and a Zava team member will respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col" style="gap: 3rem;">
+        <!-- Contact Form -->
+        <div>
+          <h2>Send Us a Message</h2>
+          <p>Fill out the form below and one of our licensed agents will get back to you promptly.</p>
+          <form action="#" method="post" style="margin-top: 1.5rem;">
+            <div class="grid grid--2">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div class="form-group">
+              <label for="subject">What can we help you with? *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a topic...</option>
+                <option value="quote">Request a Quote</option>
+                <option value="claim">File a Claim</option>
+                <option value="policy">Policy Question</option>
+                <option value="billing">Billing Inquiry</option>
+                <option value="general">General Question</option>
+                <option value="careers">Career Opportunities</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h2>Other Ways to Reach Us</h2>
+
+          <div style="background: var(--color-gray-50); border-radius: var(--radius-lg); padding: 2rem; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;">📞 Phone</h3>
+            <p><strong>General Inquiries:</strong> <a href="tel:+18005559282">1-800-555-ZAVA (9282)</a></p>
+            <p><strong>Claims Hotline (24/7):</strong> <a href="tel:+18005559283">1-800-555-9283</a></p>
+            <p><strong>Business Insurance:</strong> <a href="tel:+18005559284">1-800-555-9284</a></p>
+          </div>
+
+          <div style="background: var(--color-gray-50); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;">📧 Email</h3>
+            <p><strong>General:</strong> <a href="mailto:info@zava-insurance.com">info@zava-insurance.com</a></p>
+            <p><strong>Claims:</strong> <a href="mailto:claims@zava-insurance.com">claims@zava-insurance.com</a></p>
+            <p><strong>Careers:</strong> <a href="mailto:careers@zava-insurance.com">careers@zava-insurance.com</a></p>
+          </div>
+
+          <div style="background: var(--color-gray-50); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 1.5rem;">
+            <h3 style="margin-bottom: 1rem;">🏢 Headquarters</h3>
+            <p>Zava Insurance<br />200 Commerce Boulevard, Suite 500<br />Hartford, CT 06103</p>
+            <p><strong>Office Hours:</strong><br />Monday – Friday: 8:00 AM – 6:00 PM<br />Saturday: 9:00 AM – 1:00 PM<br />Sunday: Closed</p>
+          </div>
+
+          <div style="background: var(--color-gray-50); border-radius: var(--radius-lg); padding: 2rem;">
+            <h3 style="margin-bottom: 1rem;">🚨 Emergency Claims</h3>
+            <p>For emergency claims outside business hours, our 24/7 claims hotline is always available:</p>
+            <a href="tel:+18005559283" class="btn btn--primary" style="margin-top: 0.75rem;">Call Claims Hotline</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
