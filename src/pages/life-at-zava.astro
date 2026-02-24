@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 ---
 <BaseLayout title="Life at Zava" description="Discover what it's like to work at Zava Insurance — our culture, values, perks, and the people who make Zava a great place to build a career.">
   <!-- Hero -->
@@ -234,7 +235,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <h2>Ready to Join the Zava Family?</h2>
       <p>Explore our open positions and find your place on a team that values your growth, wellbeing, and impact.</p>
-      <a href="/careers" class="btn btn--gold btn--lg">View Open Positions</a>
+      <a href={url('/careers')} class="btn btn--gold btn--lg">View Open Positions</a>
     </div>
   </section>
 </BaseLayout>

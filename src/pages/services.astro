@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 ---
 <BaseLayout title="Services" description="Explore Zava Insurance's comprehensive range of insurance services — auto, home, life, business, health, and umbrella coverage.">
   <!-- Hero -->
@@ -28,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>New car replacement guarantee</li>
           </ul>
           <p><strong>Multi-vehicle discount:</strong> Insure 2+ vehicles and save up to 20%.</p>
-          <a href="/contact" class="btn btn--primary">Get an Auto Quote</a>
+          <a href={url('/contact')} class="btn btn--primary">Get an Auto Quote</a>
         </div>
         <div class="two-col__image">
           <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop" alt="Cars on a highway" loading="lazy" />
@@ -58,7 +59,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>Home-based business coverage add-on</li>
           </ul>
           <p><strong>Bundle & save:</strong> Combine home + auto for up to 25% off.</p>
-          <a href="/contact" class="btn btn--primary">Get a Home Quote</a>
+          <a href={url('/contact')} class="btn btn--primary">Get a Home Quote</a>
         </div>
       </div>
     </div>
@@ -79,7 +80,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li><strong>Final Expense:</strong> Simplified coverage for end-of-life costs</li>
           </ul>
           <p>Policies starting at just <strong>$15/month</strong> with no medical exam options available.</p>
-          <a href="/contact" class="btn btn--primary">Get a Life Quote</a>
+          <a href={url('/contact')} class="btn btn--primary">Get a Life Quote</a>
         </div>
         <div class="two-col__image">
           <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&h=400&fit=crop" alt="Happy family together" loading="lazy" />
@@ -110,7 +111,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>Directors & officers (D&O) liability</li>
           </ul>
           <p><strong>Industry specialists:</strong> Dedicated teams for construction, healthcare, tech, retail, and hospitality.</p>
-          <a href="/contact" class="btn btn--primary">Get a Business Quote</a>
+          <a href={url('/contact')} class="btn btn--primary">Get a Business Quote</a>
         </div>
       </div>
     </div>
@@ -134,7 +135,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>Wellness incentive programs</li>
           </ul>
           <p><strong>Open enrollment:</strong> Our health specialists guide you through every option during enrollment.</p>
-          <a href="/contact" class="btn btn--primary">Get a Health Quote</a>
+          <a href={url('/contact')} class="btn btn--primary">Get a Health Quote</a>
         </div>
         <div class="two-col__image">
           <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Healthcare professionals" loading="lazy" />
@@ -161,7 +162,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <li>Worldwide coverage</li>
             <li>Affordable — typically $150-$300/year for $1M in coverage</li>
           </ul>
-          <a href="/contact" class="btn btn--primary">Get an Umbrella Quote</a>
+          <a href={url('/contact')} class="btn btn--primary">Get an Umbrella Quote</a>
         </div>
       </div>
     </div>
@@ -173,7 +174,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2>Not Sure Which Coverage You Need?</h2>
       <p>Our licensed agents will review your situation and recommend the perfect combination of policies — free of charge.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/contact" class="btn btn--gold btn--lg">Schedule a Consultation</a>
+        <a href={url('/contact')} class="btn btn--gold btn--lg">Schedule a Consultation</a>
         <a href="tel:+18005559282" class="btn btn--outline-white btn--lg">📞 1-800-555-ZAVA</a>
       </div>
     </div>

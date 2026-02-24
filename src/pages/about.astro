@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 ---
 <BaseLayout title="About Us" description="Learn about Zava Insurance's mission, vision, values, and our commitment to community — protecting families since 1987.">
   <!-- Hero -->
@@ -199,8 +200,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2>Want to Be Part of the Zava Family?</h2>
       <p>We're always looking for passionate people to join our team and help protect communities.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/careers" class="btn btn--gold btn--lg">View Open Positions</a>
-        <a href="/life-at-zava" class="btn btn--outline-white btn--lg">Life at Zava</a>
+        <a href={url('/careers')} class="btn btn--gold btn--lg">View Open Positions</a>
+        <a href={url('/life-at-zava')} class="btn btn--outline-white btn--lg">Life at Zava</a>
       </div>
     </div>
   </section>

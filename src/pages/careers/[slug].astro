@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { jobs } from '../../data/jobs';
+import { url } from '../../utils/url';
 
 export const getStaticPaths = () => {
   return Object.keys(jobs).map(slug => ({ params: { slug } }));
@@ -8,16 +9,16 @@ export const getStaticPaths = () => {
 
 const { slug } = Astro.params;
 const job = jobs[slug as string];
-if (!job) return Astro.redirect('/careers');
+if (!job) return Astro.redirect(url('/careers'));
 ---
 <BaseLayout title={job.title} description={`${job.title} at Zava Insurance — ${job.department}, ${job.location}. ${job.description.substring(0, 120)}...`}>
   <!-- Breadcrumbs -->
   <section class="hero hero--page" style="padding: 2rem 0;">
     <div class="container">
       <nav class="breadcrumbs" style="color: var(--color-gray-300);">
-        <a href="/" style="color: var(--color-gray-300);">Home</a>
+        <a href={url('/')} style="color: var(--color-gray-300);">Home</a>
         <span>›</span>
-        <a href="/careers" style="color: var(--color-gray-300);">Careers</a>
+        <a href={url('/careers')} style="color: var(--color-gray-300);">Careers</a>
         <span>›</span>
         <span style="color: var(--color-white);">{job.title}</span>
       </nav>
@@ -75,7 +76,7 @@ if (!job) return Astro.redirect('/careers');
     <div class="container">
       <h2>Explore More Opportunities</h2>
       <p>This isn't the right fit? We have many more openings across the company.</p>
-      <a href="/careers" class="btn btn--gold btn--lg">View All Open Positions</a>
+      <a href={url('/careers')} class="btn btn--gold btn--lg">View All Open Positions</a>
     </div>
   </section>
 </BaseLayout>

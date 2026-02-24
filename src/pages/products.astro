@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
 
 const products = [
   {
@@ -82,7 +83,7 @@ const products = [
                   {product.features.map(f => <li style="margin-bottom: 0.5rem;">{f}</li>)}
                 </ul>
                 <p style="font-size: 1.125rem;"><strong>Starting at:</strong> <span style="color: var(--color-teal); font-weight: 700; font-size: 1.5rem;">{product.startingAt}</span></p>
-                <a href="/contact" class="btn btn--primary" style="margin-top: 1rem;">Get a Quote</a>
+                <a href={url('/contact')} class="btn btn--primary" style="margin-top: 1rem;">Get a Quote</a>
               </div>
               <div class="two-col__image">
                 <img src={product.image} alt={product.name} loading="lazy" />
@@ -101,7 +102,7 @@ const products = [
                   {product.features.map(f => <li style="margin-bottom: 0.5rem;">{f}</li>)}
                 </ul>
                 <p style="font-size: 1.125rem;"><strong>Starting at:</strong> <span style="color: var(--color-teal); font-weight: 700; font-size: 1.5rem;">{product.startingAt}</span></p>
-                <a href="/contact" class="btn btn--primary" style="margin-top: 1rem;">Get a Quote</a>
+                <a href={url('/contact')} class="btn btn--primary" style="margin-top: 1rem;">Get a Quote</a>
               </div>
             </>
           )}
@@ -147,7 +148,7 @@ const products = [
     <div class="container">
       <h2>Let Us Build Your Perfect Coverage Bundle</h2>
       <p>Our agents specialize in combining products for maximum protection and savings. Get a free consultation today.</p>
-      <a href="/contact" class="btn btn--gold btn--lg">Schedule a Free Consultation</a>
+      <a href={url('/contact')} class="btn btn--gold btn--lg">Schedule a Free Consultation</a>
     </div>
   </section>
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { url } from '../../utils/url';
 
 const jobs = [
   {
@@ -174,7 +175,7 @@ const departments = [...new Set(jobs.map(j => j.department))];
       <div style="display: flex; flex-direction: column; gap: 1.5rem;">
         {jobs.map((job) => (
           <div class="job-card">
-            <h3><a href={`/careers/${job.slug}`}>{job.title}</a></h3>
+            <h3><a href={url(`/careers/${job.slug}`)}>{job.title}</a></h3>
             <div class="job-card__meta">
               <span>🏢 {job.department}</span>
               <span>📍 {job.location}</span>
@@ -230,7 +231,7 @@ const departments = [...new Set(jobs.map(j => j.department))];
       <p>We're always looking for great people. Send us your resume and we'll keep you in mind for future openings.</p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="mailto:careers@zava-insurance.com" class="btn btn--gold btn--lg">Send Your Resume</a>
-        <a href="/life-at-zava" class="btn btn--outline-white btn--lg">Life at Zava</a>
+        <a href={url('/life-at-zava')} class="btn btn--outline-white btn--lg">Life at Zava</a>
       </div>
     </div>
   </section>
