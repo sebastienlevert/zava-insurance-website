@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
+
+const sections = [
+  { id: 'scope', title: 'Scope of this policy' },
+  { id: 'information', title: 'Information you provide' },
+  { id: 'hosting', title: 'Hosting and external content' },
+  { id: 'cookies', title: 'Cookies and tracking' },
+  { id: 'use-and-disclosure', title: 'Use and disclosure' },
+  { id: 'security-and-retention', title: 'Security and retention' },
+  { id: 'choices', title: 'Your choices and rights' },
+  { id: 'children', title: "Children's privacy" },
+  { id: 'updates', title: 'Policy updates' },
+  { id: 'contact', title: 'Contact us' },
+];
+---
+<BaseLayout title="Privacy Policy" description="Learn how information is handled on the Zava Insurance website, including hosting, external content, privacy choices, and contact options.">
+  <section class="hero hero--page">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Clear information about your privacy and the choices available to you when visiting our website.</p>
+      <p>Last updated: <time datetime="2026-09-15">September 15, 2026</time></p>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="container legal-layout">
+      <nav class="legal-toc" aria-labelledby="privacy-contents">
+        <h2 id="privacy-contents">On this page</h2>
+        <ol>
+          {sections.map(({ id, title }) => (
+            <li><a href={`#${id}`}>{title}</a></li>
+          ))}
+        </ol>
+      </nav>
+
+      <article class="prose legal-content" aria-label="Privacy Policy">
+        <section id="scope" aria-labelledby="scope-heading">
+          <h2 id="scope-heading">1. Scope of this policy</h2>
+          <p>This Privacy Policy describes how information is handled when you visit the Zava Insurance website ("website"). References to "we," "us," and "our" in this policy mean the operators of this website.</p>
+          <p>This policy covers the current informational website only. It is not an insurance customer privacy notice and does not describe the handling of policyholder records, medical records, claims, payments, or information collected through separate services. The website does not provide account registration, payment processing, or an online policy-management system.</p>
+        </section>
+
+        <section id="information" aria-labelledby="information-heading">
+          <h2 id="information-heading">2. Information you provide</h2>
+          <p>If you choose to contact an email address listed on the website, you share your email address, message, and any other information you include with the recipient and the email services involved. Career-related email links may also be used to send a resume or other application information. Opening an email link does not send a message until you send it through your email application.</p>
+          <p>The contact page displays fields for a name, email address, optional telephone number, subject, and message. <strong>The current contact form is not connected to a form-processing service and should not be relied on to deliver a message.</strong> Submitting it may still transmit the entered information to the hosting platform as part of a web request.</p>
+          <p>Do not enter Social Security numbers, payment card details, passwords, medical information, policy documents, or other sensitive personal information in the form or send them through ordinary email. Use a separately verified, appropriate channel for any insurance or claims matter.</p>
+        </section>
+
+        <section id="hosting" aria-labelledby="hosting-heading">
+          <h2 id="hosting-heading">3. Hosting and external content</h2>
+          <p>This website is hosted on GitHub Pages. GitHub states that it logs and stores visitors' IP addresses for security purposes, including when a visitor is not signed in to GitHub. See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> for details about its processing, retention, and privacy controls.</p>
+          <p>Some pages load photographs directly from Unsplash. When those images load, your browser connects to Unsplash and provides network request information, which can include your IP address, browser information, and referrer information, subject to your browser settings. Review the <a href="https://unsplash.com/privacy">Unsplash Privacy Policy</a> for that provider's practices.</p>
+          <p>External providers handle information under their own policies and may process it in the United States or other countries. Links to other websites do not extend this policy to those websites.</p>
+        </section>
+
+        <section id="cookies" aria-labelledby="cookies-heading">
+          <h2 id="cookies-heading">4. Cookies and tracking</h2>
+          <p>The current website code does not set cookies, use browser local storage, or include analytics scripts, advertising pixels, or behavioral advertising integrations. This does not mean that hosting providers or external services receive no information when your browser requests their content.</p>
+          <p>You can use your browser settings to manage cookies and restrict third-party requests. Blocking external images or other resources may affect how pages appear. Provider-specific controls are described in the policies linked above.</p>
+        </section>
+
+        <section id="use-and-disclosure" aria-labelledby="use-and-disclosure-heading">
+          <h2 id="use-and-disclosure-heading">5. Use and disclosure</h2>
+          <p>Correspondence received by the website operators may be used to respond to your inquiry, address a website issue, and maintain the security of the website. Please provide only the information needed for your request.</p>
+          <p>The website has no integration for selling visitor information or sharing it with advertising networks. Hosting, image delivery, and email communications involve the external providers described in this policy. Information may also be disclosed when required by applicable law or in connection with investigating misuse or protecting legal rights.</p>
+        </section>
+
+        <section id="security-and-retention" aria-labelledby="security-and-retention-heading">
+          <h2 id="security-and-retention-heading">6. Security and retention</h2>
+          <p>No method of internet transmission or electronic storage can be guaranteed completely secure. The current website has no application database for storing form submissions. Hosting records and any requests received by external providers are subject to their own security and retention practices.</p>
+          <p>Correspondence received by the website operators is retained for as long as needed to address the request, maintain necessary records, or meet applicable legal obligations. Retention depends on the nature of the communication; this policy does not promise a fixed deletion period for records controlled by external providers.</p>
+        </section>
+
+        <section id="choices" aria-labelledby="choices-heading">
+          <h2 id="choices-heading">7. Your choices and rights</h2>
+          <p>You can browse the website without creating an account and choose not to send information by email or through the contact form. You can also restrict external content using your browser controls.</p>
+          <p>Depending on your location and applicable law, you may have rights to request access to, correction of, or deletion of your personal information, or to object to or restrict certain processing. Other rights, such as data portability or making a complaint to a privacy regulator, may also apply.</p>
+          <p>For information held by the website operators, use the contact options below. For information controlled by GitHub, Unsplash, or your email provider, contact that provider using its privacy-policy instructions. A request may require verification, and legal exceptions may apply.</p>
+        </section>
+
+        <section id="children" aria-labelledby="children-heading">
+          <h2 id="children-heading">8. Children's privacy</h2>
+          <p>This website is intended for a general adult audience and is not directed to children under 13. We do not knowingly request personal information from children under 13. If you believe a child has sent personal information to the website operators, please contact us so the matter can be addressed.</p>
+        </section>
+
+        <section id="updates" aria-labelledby="updates-heading">
+          <h2 id="updates-heading">9. Policy updates</h2>
+          <p>This policy may be updated to reflect changes to the website, its providers, or applicable requirements. The revised policy will be posted at this address with an updated date. Where applicable law requires additional notice or consent, an updated policy alone does not replace that requirement.</p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">10. Contact us</h2>
+          <p>For questions about this policy or information you have shared, use the email contact options on our <a href={url('/contact')}>Contact page</a> and identify your message as a privacy inquiry. Please do not include sensitive information in your initial message. The current website form is not a reliable delivery channel.</p>
+          <p>For the conditions that apply to use of this website, please read our <a href={url('/terms')}>Terms of Use</a>.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

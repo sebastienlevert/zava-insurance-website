@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../utils/url';
+
+const sections = [
+  { id: 'about', title: 'About these terms' },
+  { id: 'insurance-information', title: 'Insurance information' },
+  { id: 'acceptable-use', title: 'Acceptable use' },
+  { id: 'intellectual-property', title: 'Intellectual property' },
+  { id: 'third-parties', title: 'Third-party services' },
+  { id: 'privacy-and-communications', title: 'Privacy and communications' },
+  { id: 'disclaimers', title: 'Website disclaimers' },
+  { id: 'liability', title: 'Limitation of liability' },
+  { id: 'changes', title: 'Changes and availability' },
+  { id: 'general', title: 'General provisions' },
+  { id: 'contact', title: 'Contact us' },
+];
+---
+<BaseLayout title="Terms of Use" description="Read the terms for using the Zava Insurance website, including acceptable use, insurance information, intellectual property, and website disclaimers.">
+  <section class="hero hero--page">
+    <div class="container">
+      <h1>Terms of Use</h1>
+      <p>Please review the conditions that apply to your access to and use of the Zava Insurance website.</p>
+      <p>Last updated: <time datetime="2026-09-15">September 15, 2026</time></p>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="container legal-layout">
+      <nav class="legal-toc" aria-labelledby="terms-contents">
+        <h2 id="terms-contents">On this page</h2>
+        <ol>
+          {sections.map(({ id, title }) => (
+            <li><a href={`#${id}`}>{title}</a></li>
+          ))}
+        </ol>
+      </nav>
+
+      <article class="prose legal-content" aria-label="Terms of Use">
+        <section id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">1. About these terms</h2>
+          <p>These Terms of Use ("Terms") describe the conditions for accessing and using the Zava Insurance website ("website"). References to "we," "us," and "our" mean the operators of this website. Please read these Terms before using the website. If you do not agree with them, please discontinue use.</p>
+          <p>These Terms apply to the website only. They do not replace any separately executed insurance policy, endorsement, application, employment agreement, or other written agreement. Your use of the website does not itself create an insurer-policyholder, agent-client, or employment relationship.</p>
+        </section>
+
+        <section id="insurance-information" aria-labelledby="insurance-information-heading">
+          <h2 id="insurance-information-heading">2. Insurance information; no binding coverage</h2>
+          <p>Content about insurance products, services, pricing, discounts, benefits, and eligibility is general information, not a binding offer of insurance or a personalized recommendation. Website content is not legal, tax, financial, or insurance advice for your individual circumstances.</p>
+          <p>Any actual coverage is governed solely by the applicable issued policy and endorsements, including their limits, exclusions, deductibles, and conditions. Availability and pricing may depend on location, underwriting, eligibility, and other requirements. Confirm any information you intend to rely on with an appropriately licensed professional through a verified channel.</p>
+          <p><strong>This website cannot bind, change, cancel, or renew insurance coverage, process a payment, or acknowledge a claim.</strong> Viewing a page, requesting a quote, or sending a message does not perform any of those actions. Do not use the website for emergency assistance or to meet a claims-notification deadline.</p>
+        </section>
+
+        <section id="acceptable-use" aria-labelledby="acceptable-use-heading">
+          <h2 id="acceptable-use-heading">3. Acceptable use</h2>
+          <p>You may use the website for lawful informational purposes. When using it, you must not:</p>
+          <ul>
+            <li>Violate applicable law or infringe another person's rights.</li>
+            <li>Impersonate another person or submit information you are not authorized to share.</li>
+            <li>Introduce malware, send abusive or unlawful material, or attempt unauthorized access to systems or data.</li>
+            <li>Disrupt the website, overwhelm its infrastructure, or bypass access restrictions.</li>
+            <li>Misrepresent website content as an issued policy, an approved claim, a verified quote, or an endorsement.</li>
+          </ul>
+          <p>Nothing in these Terms is intended to restrict activity protected by applicable law.</p>
+        </section>
+
+        <section id="intellectual-property" aria-labelledby="intellectual-property-heading">
+          <h2 id="intellectual-property-heading">4. Intellectual property</h2>
+          <p>Website text, design, branding, software, and images may be protected by copyright, trademark, or other intellectual property rights belonging to their respective owners. Access to the website does not transfer ownership of those materials or grant a right to use a third party's trademarks.</p>
+          <p>You may view and print pages for personal, non-commercial reference, retaining any applicable notices. Other reuse requires permission from the relevant rights holder unless it is allowed by law or an applicable license. Where a separate software or content license grants broader rights, that license governs the covered material.</p>
+        </section>
+
+        <section id="third-parties" aria-labelledby="third-parties-heading">
+          <h2 id="third-parties-heading">5. Third-party links and services</h2>
+          <p>The website is hosted on GitHub Pages and may display images or link to resources provided by third parties, including Unsplash. Those services are independently operated and may have their own terms, privacy practices, and availability limitations.</p>
+          <p>A link or reference is provided for convenience and does not by itself imply endorsement or a guarantee of accuracy. Review the terms and privacy notices of an external service before using it or sharing information with it.</p>
+        </section>
+
+        <section id="privacy-and-communications" aria-labelledby="privacy-and-communications-heading">
+          <h2 id="privacy-and-communications-heading">6. Privacy and communications</h2>
+          <p>Our <a href={url('/privacy')}>Privacy Policy</a> explains the information handling associated with this website, including hosting records and external content. It should be read alongside these Terms.</p>
+          <p>The current contact form is not connected to a form-processing service. Do not assume that submitting it delivers a message or creates a record of receipt. Email links open your email application; any message you choose to send is handled through the email services involved.</p>
+          <p>Do not send passwords, payment details, medical information, or other sensitive data through the form or ordinary email. Use an independently verified, appropriate channel for insurance, claims, or other confidential matters. Job listings and application links do not guarantee that a position remains open, that an application will be received, or that employment will be offered.</p>
+        </section>
+
+        <section id="disclaimers" aria-labelledby="disclaimers-heading">
+          <h2 id="disclaimers-heading">7. Website disclaimers</h2>
+          <p>To the extent permitted by applicable law, the website and its content are provided "as is" and "as available," without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+          <p>We do not guarantee that the website will be uninterrupted, error-free, secure, or free from harmful components, or that all content will be complete, accurate, or current. Content may contain errors or omissions and may be changed without notice. You remain responsible for verifying information before relying on it.</p>
+          <p>These disclaimers do not exclude warranties or protections that cannot lawfully be excluded.</p>
+        </section>
+
+        <section id="liability" aria-labelledby="liability-heading">
+          <h2 id="liability-heading">8. Limitation of liability</h2>
+          <p>To the extent permitted by applicable law, the website operators will not be liable for indirect, incidental, consequential, special, or punitive losses arising from the use of, or inability to use, this website, including loss of data, profits, or business opportunities.</p>
+          <p>This limitation applies only to website use. It does not limit obligations under a separately issued insurance policy or other written agreement. Nothing in these Terms excludes liability for fraud, intentional misconduct, or any liability that cannot be excluded or limited under applicable law.</p>
+        </section>
+
+        <section id="changes" aria-labelledby="changes-heading">
+          <h2 id="changes-heading">9. Changes and availability</h2>
+          <p>We may update website content, modify features, or suspend or discontinue the website, including for maintenance, security, or operational reasons. Access may also be restricted in response to misuse.</p>
+          <p>Revisions to these Terms will be posted on this page with an updated date. Review this page periodically. Any additional notice or agreement required by applicable law remains required; posting revised Terms alone does not override that requirement.</p>
+        </section>
+
+        <section id="general" aria-labelledby="general-heading">
+          <h2 id="general-heading">10. General provisions</h2>
+          <p>These Terms are subject to applicable law and do not remove mandatory consumer protections or other non-waivable rights. They do not establish a mandatory arbitration procedure or require you to waive a right to bring a claim that applicable law protects.</p>
+          <p>If a provision is found unenforceable, the remaining provisions continue to apply to the extent permitted by law. A failure to enforce a provision on one occasion does not waive the ability to enforce it later. These Terms address website use only and do not amend separate written agreements.</p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">11. Contact us</h2>
+          <p>For questions about these Terms or to report a website issue, use the email contact options on our <a href={url('/contact')}>Contact page</a>. Please identify the relevant page or provision and avoid including sensitive personal information. Do not rely on the current website form for delivery or urgent communications.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</BaseLayout>
