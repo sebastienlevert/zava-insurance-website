@@ -12,6 +12,29 @@ A modern, SEO-friendly corporate website for Zava Insurance, built with [Astro](
 - **Life at Zava** — Culture, values, employee testimonials, perks & benefits, ERGs
 - **Careers** — 12 open job postings with full detail pages
 - **Contact** — Contact form and company contact information
+- **Privacy Policy** (`/privacy`) — Website information handling, hosting and external content, privacy choices, and contact options
+- **Terms of Use** (`/terms`) — Website usage conditions, insurance disclaimers, intellectual property, and liability
+
+Both legal pages are linked from the shared footer on every page. Internal links use
+the configured `BASE_PATH`, so the default GitHub Pages URLs are
+`/zava-insurance-website/privacy` and `/zava-insurance-website/terms`. With
+`BASE_PATH=/`, the routes are `/privacy` and `/terms`.
+
+### Legal content
+
+The privacy and terms pages contain original template text tailored to the current
+static website, last updated September 15, 2026. They are not legal advice or a
+representation that the website complies with every applicable law. Have the
+website owner and qualified counsel review them before relying on them for a
+production insurance business. Confirm the operator identity, contact details,
+jurisdictions, data practices, and any separate insurance privacy notices.
+
+The privacy text reflects GitHub Pages hosting, externally loaded Unsplash images,
+email links, and the absence of first-party analytics or a form-processing backend.
+The existing contact form is not connected to a submission service; posting it may
+still send entered data to the host. Revisit both pages before enabling form
+processing, analytics, cookies, accounts, payments, or other data collection.
+Provider references are linked in the Privacy Policy.
 
 ## Tech Stack
 
@@ -61,6 +84,8 @@ To set up:
 │   │   ├── products.astro
 │   │   ├── branches.astro
 │   │   ├── contact.astro
+│   │   ├── privacy.astro
+│   │   ├── terms.astro
 │   │   ├── life-at-zava.astro
 │   │   └── careers/
 │   │       ├── index.astro       # Careers listing
